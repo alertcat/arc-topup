@@ -1,0 +1,202 @@
+{
+ "abi": [
+  {
+   "inputs": [
+    {
+     "internalType": "address payable",
+     "name": "treasury_",
+     "type": "address"
+    }
+   ],
+   "stateMutability": "nonpayable",
+   "type": "constructor"
+  },
+  {
+   "inputs": [],
+   "name": "ForwardFailed",
+   "type": "error"
+  },
+  {
+   "inputs": [],
+   "name": "NotOwner",
+   "type": "error"
+  },
+  {
+   "inputs": [],
+   "name": "ZeroAddress",
+   "type": "error"
+  },
+  {
+   "inputs": [],
+   "name": "ZeroValue",
+   "type": "error"
+  },
+  {
+   "anonymous": false,
+   "inputs": [
+    {
+     "indexed": true,
+     "internalType": "address",
+     "name": "previous",
+     "type": "address"
+    },
+    {
+     "indexed": true,
+     "internalType": "address",
+     "name": "current",
+     "type": "address"
+    }
+   ],
+   "name": "OwnerChanged",
+   "type": "event"
+  },
+  {
+   "anonymous": false,
+   "inputs": [
+    {
+     "indexed": true,
+     "internalType": "bytes32",
+     "name": "orderId",
+     "type": "bytes32"
+    },
+    {
+     "indexed": true,
+     "internalType": "address",
+     "name": "payer",
+     "type": "address"
+    },
+    {
+     "indexed": false,
+     "internalType": "uint256",
+     "name": "amount",
+     "type": "uint256"
+    },
+    {
+     "indexed": false,
+     "internalType": "uint256",
+     "name": "index",
+     "type": "uint256"
+    }
+   ],
+   "name": "Paid",
+   "type": "event"
+  },
+  {
+   "anonymous": false,
+   "inputs": [
+    {
+     "indexed": true,
+     "internalType": "address",
+     "name": "previous",
+     "type": "address"
+    },
+    {
+     "indexed": true,
+     "internalType": "address",
+     "name": "current",
+     "type": "address"
+    }
+   ],
+   "name": "TreasuryChanged",
+   "type": "event"
+  },
+  {
+   "inputs": [],
+   "name": "owner",
+   "outputs": [
+    {
+     "internalType": "address",
+     "name": "",
+     "type": "address"
+    }
+   ],
+   "stateMutability": "view",
+   "type": "function"
+  },
+  {
+   "inputs": [
+    {
+     "internalType": "bytes32",
+     "name": "orderId",
+     "type": "bytes32"
+    }
+   ],
+   "name": "pay",
+   "outputs": [],
+   "stateMutability": "payable",
+   "type": "function"
+  },
+  {
+   "inputs": [
+    {
+     "internalType": "address payable",
+     "name": "treasury_",
+     "type": "address"
+    }
+   ],
+   "name": "setTreasury",
+   "outputs": [],
+   "stateMutability": "nonpayable",
+   "type": "function"
+  },
+  {
+   "inputs": [],
+   "name": "totalOrders",
+   "outputs": [
+    {
+     "internalType": "uint256",
+     "name": "",
+     "type": "uint256"
+    }
+   ],
+   "stateMutability": "view",
+   "type": "function"
+  },
+  {
+   "inputs": [],
+   "name": "totalPaid",
+   "outputs": [
+    {
+     "internalType": "uint256",
+     "name": "",
+     "type": "uint256"
+    }
+   ],
+   "stateMutability": "view",
+   "type": "function"
+  },
+  {
+   "inputs": [
+    {
+     "internalType": "address",
+     "name": "newOwner",
+     "type": "address"
+    }
+   ],
+   "name": "transferOwnership",
+   "outputs": [],
+   "stateMutability": "nonpayable",
+   "type": "function"
+  },
+  {
+   "inputs": [],
+   "name": "treasury",
+   "outputs": [
+    {
+     "internalType": "address payable",
+     "name": "",
+     "type": "address"
+    }
+   ],
+   "stateMutability": "view",
+   "type": "function"
+  },
+  {
+   "stateMutability": "payable",
+   "type": "receive"
+  }
+ ],
+ "bytecode": "0x6080604052348015600f57600080fd5b50604051610577380380610577833981016040819052602c916084565b6001600160a01b03811660525760405163d92e233d60e01b815260040160405180910390fd5b60008054336001600160a01b031991821617909155600180549091166001600160a01b039290921691909117905560b2565b600060208284031215609557600080fd5b81516001600160a01b038116811460ab57600080fd5b9392505050565b6104b6806100c16000396000f3fe6080604052600436106100745760003560e01c80638da5cb5b1161004e5780638da5cb5b146100fe578063e7b0f6661461011e578063f0f4426014610134578063f2fde38b1461015457600080fd5b80631d8344091461008a57806361d027b3146100b35780638609cad1146100eb57600080fd5b36610085576100836000610174565b005b600080fd5b34801561009657600080fd5b506100a060035481565b6040519081526020015b60405180910390f35b3480156100bf57600080fd5b506001546100d3906001600160a01b031681565b6040516001600160a01b0390911681526020016100aa565b6100836100f93660046103e6565b61027f565b34801561010a57600080fd5b506000546100d3906001600160a01b031681565b34801561012a57600080fd5b506100a060025481565b34801561014057600080fd5b5061008361014f366004610414565b61028b565b34801561016057600080fd5b5061008361016f366004610414565b610339565b3460000361019557604051637c946ed760e01b815260040160405180910390fd5b34600260008282546101a7919061044e565b9250508190555060006003600081546101bf90610467565b91829055506001546040519192506000916001600160a01b039091169034908381818185875af1925050503d8060008114610216576040519150601f19603f3d011682016040523d82523d6000602084013e61021b565b606091505b505090508061023d5760405163096dc0e160e01b815260040160405180910390fd5b6040805134815260208101849052339185917f5ce467ae5694ddb233a02ca7eb987835c5e2ea71eec0e379bf3a5e1207ae2459910160405180910390a3505050565b61028881610174565b50565b6000546001600160a01b031633146102b6576040516330cd747160e01b815260040160405180910390fd5b6001600160a01b0381166102dd5760405163d92e233d60e01b815260040160405180910390fd5b6001546040516001600160a01b038084169216907f8c3aa5f43a388513435861bf27dfad7829cd248696fed367c62d441f6295449690600090a3600180546001600160a01b0319166001600160a01b0392909216919091179055565b6000546001600160a01b03163314610364576040516330cd747160e01b815260040160405180910390fd5b6001600160a01b03811661038b5760405163d92e233d60e01b815260040160405180910390fd5b600080546040516001600160a01b03808516939216917fb532073b38c83145e3e5135377a08bf9aab55bc0fd7c1179cd4fb995d2a5159c91a3600080546001600160a01b0319166001600160a01b0392909216919091179055565b6000602082840312156103f857600080fd5b5035919050565b6001600160a01b038116811461028857600080fd5b60006020828403121561042657600080fd5b8135610431816103ff565b9392505050565b634e487b7160e01b600052601160045260246000fd5b8082018082111561046157610461610438565b92915050565b60006001820161047957610479610438565b506001019056fea26469706673582212206a99aeee3b402188cfbd79dfae8a3907c66b2283f4cfd28ce2d68c3b95e542de64736f6c634300081c0033",
+ "deployedBytecode": "0x6080604052600436106100745760003560e01c80638da5cb5b1161004e5780638da5cb5b146100fe578063e7b0f6661461011e578063f0f4426014610134578063f2fde38b1461015457600080fd5b80631d8344091461008a57806361d027b3146100b35780638609cad1146100eb57600080fd5b36610085576100836000610174565b005b600080fd5b34801561009657600080fd5b506100a060035481565b6040519081526020015b60405180910390f35b3480156100bf57600080fd5b506001546100d3906001600160a01b031681565b6040516001600160a01b0390911681526020016100aa565b6100836100f93660046103e6565b61027f565b34801561010a57600080fd5b506000546100d3906001600160a01b031681565b34801561012a57600080fd5b506100a060025481565b34801561014057600080fd5b5061008361014f366004610414565b61028b565b34801561016057600080fd5b5061008361016f366004610414565b610339565b3460000361019557604051637c946ed760e01b815260040160405180910390fd5b34600260008282546101a7919061044e565b9250508190555060006003600081546101bf90610467565b91829055506001546040519192506000916001600160a01b039091169034908381818185875af1925050503d8060008114610216576040519150601f19603f3d011682016040523d82523d6000602084013e61021b565b606091505b505090508061023d5760405163096dc0e160e01b815260040160405180910390fd5b6040805134815260208101849052339185917f5ce467ae5694ddb233a02ca7eb987835c5e2ea71eec0e379bf3a5e1207ae2459910160405180910390a3505050565b61028881610174565b50565b6000546001600160a01b031633146102b6576040516330cd747160e01b815260040160405180910390fd5b6001600160a01b0381166102dd5760405163d92e233d60e01b815260040160405180910390fd5b6001546040516001600160a01b038084169216907f8c3aa5f43a388513435861bf27dfad7829cd248696fed367c62d441f6295449690600090a3600180546001600160a01b0319166001600160a01b0392909216919091179055565b6000546001600160a01b03163314610364576040516330cd747160e01b815260040160405180910390fd5b6001600160a01b03811661038b5760405163d92e233d60e01b815260040160405180910390fd5b600080546040516001600160a01b03808516939216917fb532073b38c83145e3e5135377a08bf9aab55bc0fd7c1179cd4fb995d2a5159c91a3600080546001600160a01b0319166001600160a01b0392909216919091179055565b6000602082840312156103f857600080fd5b5035919050565b6001600160a01b038116811461028857600080fd5b60006020828403121561042657600080fd5b8135610431816103ff565b9392505050565b634e487b7160e01b600052601160045260246000fd5b8082018082111561046157610461610438565b92915050565b60006001820161047957610479610438565b506001019056fea26469706673582212206a99aeee3b402188cfbd79dfae8a3907c66b2283f4cfd28ce2d68c3b95e542de64736f6c634300081c0033",
+ "metadata": "{\"compiler\":{\"version\":\"0.8.28+commit.7893614a\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address payable\",\"name\":\"treasury_\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"ForwardFailed\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NotOwner\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ZeroAddress\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ZeroValue\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previous\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"current\",\"type\":\"address\"}],\"name\":\"OwnerChanged\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"orderId\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"payer\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"index\",\"type\":\"uint256\"}],\"name\":\"Paid\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previous\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"current\",\"type\":\"address\"}],\"name\":\"TreasuryChanged\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"orderId\",\"type\":\"bytes32\"}],\"name\":\"pay\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address payable\",\"name\":\"treasury_\",\"type\":\"address\"}],\"name\":\"setTreasury\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalOrders\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalPaid\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"treasury\",\"outputs\":[{\"internalType\":\"address payable\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"stateMutability\":\"payable\",\"type\":\"receive\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"title\":\"ArcTopUp - settlement receipts for USDC top-ups on Arc mainnet\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"pay(bytes32)\":{\"notice\":\"Pay for a specific order. orderId = sha256(order reference), chosen off-chain.\"}},\"notice\":\"Arc uses USDC as its native gas token, so a payment is a plain value         transfer. Every payment is forwarded to the treasury inside the same         transaction and recorded as a Paid event that the off-chain crediting         service consumes. The contract never holds funds.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"ArcTopUp.sol\":\"ArcTopUp\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"ArcTopUp.sol\":{\"keccak256\":\"0xad646f7af1eeaae8862a2e48fbaaf9e9b33f7fedc931e7e792c1510c3340be08\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://049bf1b7d5efcddff39e18ebbe418811e498e37124a03fb7c4df4c822f8fd839\",\"dweb:/ipfs/QmSVo5wW5Bs7xTtfEuuz3hz2hxTTfBZUP2ZyeytUZVC5De\"]}},\"version\":1}"
+}

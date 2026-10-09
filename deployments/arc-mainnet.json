@@ -1,0 +1,16 @@
+{
+ "address": "0x550E9520572e2Fabc4ae8d8212A3e0e8c12EaAc7",
+ "txHash": "0xc4011339f1de81fa8a5fa6928dea5ae0cf9a27e399fcf593d998e82d734a4c8b",
+ "block": 25129869,
+ "deployer": "0x441AD90849A038b0550eAc9b4B0Abd8Bb4E7db86",
+ "treasury": "0xE764725e39BBbA26C9A4b092D781432a4A188599",
+ "owner": "0xE764725e39BBbA26C9A4b092D781432a4A188599",
+ "chainId": 5042,
+ "compiler": "v0.8.28+commit.7893614a",
+ "optimizer": {
+  "enabled": true,
+  "runs": 200
+ },
+ "evmVersion": "paris",
+ "deployedAt": "2026-10-09T20:46:57.974Z"
+}
